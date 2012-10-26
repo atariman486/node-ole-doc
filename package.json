@@ -1,11 +1,8 @@
 {
   "name": "node-ole-doc",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Read streams from an OLE Compound Document, e.g. StructuredStorage",
   "main": "./lib/node-ole-doc.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/atariman486/node-ole-doc.git"
@@ -18,7 +15,7 @@
     "Storage",
     "StructuredStorage"
   ],
-  "author": "Chris Geiersbach",
+  "author": "Chris Geiersbach <atariman486@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "async": "~0.1.22",
