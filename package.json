@@ -21,5 +21,12 @@
     "async": "~0.1.22",
     "underscore": "~1.4.2",
     "event-stream": "~3.0.7"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
+  },
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha ./test/*.js --reporter spec"
   }
 }
