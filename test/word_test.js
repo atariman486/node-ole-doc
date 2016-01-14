@@ -5,22 +5,22 @@ fs = require('fs');
 path = require('path');
 Buffer = require('buffer').Buffer;
 
-oleDoc = require('../lib/ole-doc').OleCompoundDoc;
+OleDoc = require('../lib/ole-doc').OleCompoundDoc;
 
 describe('A missing Word document' , function() {
 
   it('should notify an error on open', function(done) {
     var filename = path.resolve(__dirname, "data/missing.doc");
-    document = new oleDoc(filename);
-    document.on('err', function(err) {
+    doc = new OleDoc(filename);
+    doc.on('err', function(err) {
       expect(err).to.exist;
       expect(err).to.match(/missing\.doc/);
       done();
     });
-    document.on('ready', function() {
+    doc.on('ready', function() {
       done("ready should not be called for a missing file");
     });
-    document.read();
+    doc.read();
   });
 
 });
@@ -37,7 +37,7 @@ function testWordFile(file) {
 
     it('can be opened correctly', function(done) {
       var filename = path.resolve(__dirname, "data/" + file);
-      doc = new oleDoc(filename);
+      doc = new OleDoc(filename);
       doc.on('err', function(err) {
         done(err);
       });
@@ -49,7 +49,7 @@ function testWordFile(file) {
 
     it('generates a valid Word stream', function(done) {
       var filename = path.resolve(__dirname, "data/" + file);
-      doc = new oleDoc(filename);
+      doc = new OleDoc(filename);
       doc.on('err', function(err) {
         done(err);
       });
